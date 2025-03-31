@@ -5,6 +5,7 @@ import { Bot, Menu } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type React from "react" // Added import for React
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
 
 export default function Navbar() {
   return (
@@ -25,12 +26,13 @@ export default function Navbar() {
         <NavLink href="/pricing">Pricing</NavLink>
       </div> */}
 
-      {/* <div className="hidden md:flex items-center space-x-4">
-        <Button variant="ghost" className="text-white hover:text-purple-400">
+      <div className="hidden md:flex items-center space-x-4">
+        {/* <Button variant="ghost" className="text-white hover:text-purple-400">
           Sign In
         </Button>
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button>
-      </div> */}
+        <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button> */}
+        <WalletMultiButton  />
+      </div>
 
       <Button variant="ghost" size="icon" className="md:hidden text-white">
         <Menu className="w-6 h-6" />
