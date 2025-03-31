@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Bot, Menu } from "lucide-react"
+import { Bot, Menu, Wallet } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type React from "react" // Added import for React
@@ -13,10 +13,8 @@ export default function Navbar() {
   const pathName = usePathname();
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="flex items-center justify-between px-6 py-4 backdrop-blur-sm border-b border-white/10"
+    <div
+      className="flex h-fit items-center justify-between px-6 py-4 backdrop-blur-sm border-b border-white/10"
     >
       <Link href="/" className="flex items-center space-x-2">
         <Bot className="w-8 h-8 text-purple-500" />
@@ -37,13 +35,13 @@ export default function Navbar() {
           Sign In
         </Button> */}
         {/* <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button> */}
-        {pathName != "/" ? <WalletMultiButton /> : ""}
+        <WalletMultiButton />
       </div>
 
       <Button variant="ghost" size="icon" className="md:hidden text-white">
         <Menu className="w-6 h-6" />
       </Button>
-    </motion.nav>
+    </div>
   )
 }
 

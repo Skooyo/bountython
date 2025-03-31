@@ -9,7 +9,7 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <div className="relative min-h-[calc(100vh-76px)] flex items-center">
+    <div className="relative min-h-[calc(100vh-81px)] max-h-screen flex items-center">
       {/* Floating papers background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* <FloatingPaper count={6} /> */}
