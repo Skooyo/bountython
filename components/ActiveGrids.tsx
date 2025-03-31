@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { ActivityCard } from "./ActivityCard"
+import CryptoActivity from "./CryptoActivity"
 
 const sampleData = {
   profitLoss: 12.45, // percentage
@@ -25,10 +26,13 @@ export function ActiveGrids() {
           <h2 className="text-xl font-semibold text-gray-200">Active Grids</h2>
         </div>
         <ScrollArea className="flex-1 w-full pr-4">
-          <div className="flex flex-col gap-3">
-            {sampleData.transactions.map((transaction) => (
-              <ActivityCard key={transaction.id} {...transaction} />
-            ))}
+          <div className="grid-cols-2 grid gap-6">
+            <CryptoActivity />
+            <CryptoActivity />
+            <CryptoActivity />
+            <CryptoActivity />
+            <CryptoActivity />
+            <CryptoActivity />
           </div>
         </ScrollArea>
       </div>
