@@ -1,47 +1,41 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Bot, Menu, Wallet } from "lucide-react"
+import { Bot, Menu } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type React from "react" // Added import for React
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
-import { usePathname } from "next/navigation"
 
 export default function Navbar() {
-
-  const pathName = usePathname();
-
   return (
-    <div
-      className="flex h-fit items-center justify-between px-6 py-4 backdrop-blur-sm border-b border-white/10"
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="flex items-center justify-between px-6 py-4 backdrop-blur-sm border-b border-white/10"
     >
       <Link href="/" className="flex items-center space-x-2">
         <Bot className="w-8 h-8 text-purple-500" />
         <span className="text-white font-medium text-xl">GridAI</span>
       </Link>
 
-      <div className="hidden md:flex items-center space-x-8">
-        {/* <NavLink href="/features">Features</NavLink>
+      {/* <div className="hidden md:flex items-center space-x-8">
+        <NavLink href="/features">Features</NavLink>
         <NavLink href="/how-it-works">How it Works</NavLink>
         <NavLink href="/examples">Examples</NavLink>
-        <NavLink href="/pricing">Pricing</NavLink> */}
-      </div>
+        <NavLink href="/pricing">Pricing</NavLink>
+      </div> */}
 
-
-          {/* right side of the navbar (we will put our connect wallet button here) */}
-      <div className="hidden md:flex items-center space-x-4">
-        {/* <Button variant="ghost" className="text-white hover:text-purple-400">
+      {/* <div className="hidden md:flex items-center space-x-4">
+        <Button variant="ghost" className="text-white hover:text-purple-400">
           Sign In
-        </Button> */}
-        {/* <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button> */}
-        <WalletMultiButton />
-      </div>
+        </Button>
+        <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button>
+      </div> */}
 
       <Button variant="ghost" size="icon" className="md:hidden text-white">
         <Menu className="w-6 h-6" />
       </Button>
-    </div>
+    </motion.nav>
   )
 }
 

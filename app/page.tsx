@@ -4,7 +4,9 @@ import { SparklesCore } from "@/components/sparkles"
 
 export default function Home() {
   return (
+    <>
+        <Navbar />
         <Hero />
+    </>
   )
 }
-

@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppWalletProvider from "@/components/AppWalletProvider";
 import { SparklesCore } from "@/components/sparkles";
-import Navbar from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,15 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppWalletProvider>
-          <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] relative">
-                
-                <div className="relative z-10 h-[10%]">
-                  <Navbar />
-                </div>
-                <div className="relative z-10 h-min-[90vh] h-[91.7vh] overflow-y-auto">
-                  {children}
-                </div>
-
+          <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
                 {/* Ambient background with moving particles */}
                 <div className="h-full w-full absolute inset-0 z-0">
                   <SparklesCore
@@ -53,8 +44,10 @@ export default function RootLayout({
                   />
                 </div>
           
+                <div className="relative z-10">
+                  {children}
+                </div>
               </main>
-
         </AppWalletProvider>
       </body>
     </html>

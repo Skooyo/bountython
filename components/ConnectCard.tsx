@@ -12,14 +12,14 @@ export default function ConnectCard(){
 
   console.log("this is state of wallet:", wallet.connected)
 
-  // useEffect(() =>{
-  //   if(wallet.connected){
-  //     console.log("Wallet is connected")
-  //     router.push("/dashboard")
-  //   }else{
-  //     console.log("Wallet is not connected")
-  //   }
-  // }, [wallet])
+  useEffect(() =>{
+    if(wallet.connected){
+      console.log("Wallet is connected")
+      router.push("/dashboard")
+    }else{
+      console.log("Wallet is not connected")
+    }
+  }, [wallet])
 
   return(
     <div className="bg-white/10 rounded-lg p-8 shadow-md backdrop-blur-sm border border-white/20 w-fit items-center justify-center gap-4 h-fit flex-col flex">
