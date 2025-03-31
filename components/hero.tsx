@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { FileText, Sparkles } from "lucide-react"
 // import { FloatingPaper } from "@/components/floating-paper"
 import { RoboAnimation } from "@/components/robo-animation"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -41,9 +42,12 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
+            <Link
+            href="/connect">
             <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 p-8">
               Get Started
             </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

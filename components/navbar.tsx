@@ -5,8 +5,13 @@ import { Bot, Menu } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type React from "react" // Added import for React
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
+
+  const pathName = usePathname();
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -31,7 +36,8 @@ export default function Navbar() {
         {/* <Button variant="ghost" className="text-white hover:text-purple-400">
           Sign In
         </Button> */}
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button>
+        {/* <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button> */}
+        {pathName != "/" ? <WalletMultiButton /> : ""}
       </div>
 
       <Button variant="ghost" size="icon" className="md:hidden text-white">
