@@ -19,7 +19,7 @@ export default function ConnectCard(){
     }else{
       console.log("Wallet is not connected")
     }
-  }, [wallet])
+  }, [wallet.connected])
 
   return(
     <div className="bg-white/10 rounded-lg p-8 shadow-md backdrop-blur-sm border border-white/20 w-fit items-center justify-center gap-4 h-fit flex-col flex">
