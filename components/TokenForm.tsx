@@ -14,28 +14,32 @@ export function TokenForm({ tokenSymbol }: TokenFormProps) {
 
       <form className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="amount">Amount to Trade</Label>
+          <Label htmlFor="amount">Upper Limit</Label>
           <Input
             id="amount"
             type="number"
-            placeholder={`Enter ${tokenSymbol} amount`}
+            placeholder={`Enter Grid Upper Limmit`}
             className="bg-[#333333] border-[#444444]"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="price">Target Price (USD)</Label>
-          <Input id="price" type="number" placeholder="Enter target price" className="bg-[#333333] border-[#444444]" />
+          <Label htmlFor="price">Lower Limit</Label>
+          <Input id="price" type="number" placeholder="Enter Grid Lower Limit" className="bg-[#333333] border-[#444444]" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="notes">Trading Notes</Label>
-          <Input id="notes" placeholder="Add notes about this trade" className="bg-[#333333] border-[#444444]" />
+          <Label htmlFor="price">Grid Number</Label>
+          <Input id="price" type="number" placeholder="Enter Number of Grids" className="bg-[#333333] border-[#444444]" />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="notes">Current SOL Invested</Label>
+          <Input id="notes" placeholder="Enter SOL Amount" className="bg-[#333333] border-[#444444]" />
         </div>
 
         <div className="flex gap-2 pt-2">
-          <Button className="flex-1 bg-blue-600 hover:bg-blue-700">Buy</Button>
-          <Button className="flex-1 bg-green-600 hover:bg-green-700">Sell</Button>
+          <Button className="flex-1 bg-green-600 hover:bg-green-700">Adjust</Button>
         </div>
       </form>
     </Card>
